@@ -1,0 +1,52 @@
+@use "./colors.scss" as colors;
+
+@mixin dFlex($fd: row, $jc: center, $ai: center) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+//example : @include DMSans(700, 64px, 76.8px, $main-blue-dark);
+
+@mixin buttonGold($width, $height, $gap) {
+    width: $width;
+    height: $height;
+    gap: $gap;
+    @include DMSans(700, 18px, 23.44px, $white);
+    background-color: colors.$main;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+
+    &:hover {
+        background-color: rgba($color: colors.$main-dark, $alpha: 0.8);
+        scale: 1.1;
+        transition: all 0.1s ease-in;
+        cursor: pointer;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        transition: all 0.1s ease-in;
+    }
+}
+
+//example : @include buttonBlue(151px, 48px, 10px);
+
+@mixin btnHover($color) {
+    background-color: darken($color, 10%);
+    transition: all 175ms ease-in;
+}
+
+@mixin btnActive($color) {
+    background-color: darken($color, 15%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    transition: all 175ms ease-in;
+}
+
+@mixin btnDisabled($color) {
+    background-color: lighten($color, 25%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    transition: all 175ms ease-in;
+}

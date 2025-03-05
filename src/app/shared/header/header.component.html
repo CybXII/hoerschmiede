@@ -1,0 +1,25 @@
+<section class="header" id="header">
+    <div class="main-header" id="main-header">
+        <div class="header-contact">
+            <div id="phone">
+                <img src="/assets/phone.png" alt="Phone Icon">
+                <a href="tel:044 594 31 90">044 594 31 90</a>
+            </div>
+            <div id="mail">
+                <img src="/assets/mail.png" alt="Mail Icon">
+                <a href="mailto:info@hoerschmiede-boo.ch">info&#64;hoerschmiede-boo.ch</a>
+            </div>
+            <div id="social-media">
+                <img src="/assets/instagram.png" alt="Instagram Icon">
+                <img src="/assets/facebook.png" alt="Facebook Icon">
+            </div>
+        </div>
+        <img src="/assets/FooterUMini.png" alt="Hoerschmiede Logo" class="logo" id="logo">
+        <img src="/assets/generatedtext.png" alt="Ihr Hörgerateakustiker in Horgen" class="slogan" id="slogan">
+    </div>
+    <div class="buttons" id="buttons">
+        @for (button of buttons; track $index) {
+            <app-buttons [text]="button.text"></app-buttons>
+        }
+    </div>
+</section>

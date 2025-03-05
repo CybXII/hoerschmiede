@@ -1,0 +1,16 @@
+@use '../../../../src/mixins.scss' as mixins;
+
+.main-header{
+    max-width: 1920px;
+    .slogan{
+        height: 50%;
+    }
+}
+.buttons{
+    width: 100%;
+    @include mixins.dFlex(row, center, center);
+    gap: 8px;
+    flex-wrap: nowrap;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
