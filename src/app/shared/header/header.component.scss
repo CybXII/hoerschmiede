@@ -1,9 +1,45 @@
 @use '../../../../src/mixins.scss' as mixins;
-
+@use '../../../../src/colors.scss' as colors;
+section{
+    width: 100%;
+    @include mixins.dFlex(column, space-between, center);
+}
 .main-header{
+    @include mixins.dFlex(row, space-between, center);
+    width: 100%;
     max-width: 1920px;
+    padding: 20px;
     .slogan{
-        height: 50%;
+        width: 300px;
+        rotate: 20deg;
+    }
+    .header-logo{
+        @include mixins.dFlex(row, center, center);
+        .headline{
+            @include mixins.dFlex(column, flex-start, flex-start);
+            color: colors.$main;
+        }    
+    }
+    .header-contact{
+        @include mixins.dFlex(column, space-between, flex-start);
+        height: 100%;
+        gap: 8px;
+    }
+    a{
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    .social-media{
+        @include mixins.dFlex(row, center, center);
+        gap: 8px;
+        img {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            z-index: 10;
+        }
     }
 }
 .buttons{
@@ -13,4 +49,11 @@
     flex-wrap: nowrap;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
+}
+
+a{
+    @include mixins.dFlex(row, flex-start, center);
+    gap: 8px;
+    color: colors.$black;
+    text-decoration: none;
 }

@@ -1,0 +1,4 @@
+@use '../../../src/mixins.scss' as mixins;
+.header{
+    @include mixins.dFlex(row, center, center);
+}
